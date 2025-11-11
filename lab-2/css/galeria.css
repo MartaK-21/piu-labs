@@ -1,0 +1,45 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  background: #f7f7f7;
+}
+
+h1 {
+  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  gap: 1rem;
+}
+
+.gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Media queries dla kolumn */
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1199px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
