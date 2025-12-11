@@ -1,6 +1,8 @@
-import { UI } from './ui.js';
+export function randomHsl() {
+    return `hsl(${Math.floor(Math.random() * 360)}, 70%, 75%)`;
+}
 
-// Inicjalizacja interfejsu po załadowaniu DOM
-document.addEventListener('DOMContentLoaded', () => {
-    UI.init();
-});
+export function generateId() {
+    // generator unikalnego ID (timestamp + losowa końcówka)
+    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+}
