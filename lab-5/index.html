@@ -3,28 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Lab 5</title>
-    <style></style>
+    <title>Kształty | Lab-5</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
   </head>
   <body>
-    <h2>Lab 5: Kształty</h2>
+    <header class="page-header">
+      <div class="heading">
+        <h1>Kształty</h1>
+      </div>
+    </header>
 
-    <div class="controls">
-      <button id="addSquare">Dodaj kwadrat</button>
-      <button id="addCircle">Dodaj kółko</button>
-      <button id="recolorSquares">Przekoloruj kwadraty</button>
-      <button id="recolorCircles">Przekoloruj kółka</button>
-    </div>
+    <main class="layout">
+      <section class="controls" aria-label="Sterowanie kształtami">
+        <div class="buttons add">
+          <button type="button" data-action="add-square">
+            ▢ Dodaj kwadrat
+          </button>
+          <button type="button" data-action="add-circle">◯ Dodaj kółko</button>
+        </div>
+        <div class="buttons recolor">
+          <button type="button" data-action="recolor-squares">
+            🎨 Kwadraty
+          </button>
+          <button type="button" data-action="recolor-circles">🌈 Kółka</button>
+        </div>
+      </section>
 
-    <div class="counters">
-      <span>Liczba kwadratów: <strong id="cntSquares">0</strong></span>
-      &nbsp;|&nbsp;
-      <span>Liczba kółek: <strong id="cntCircles">0</strong></span>
-    </div>
+      <section class="status" aria-label="Liczniki kształtów">
+        <div class="counter">
+          <span>Kwadraty:</span>
+          <strong data-role="count-squares">0</strong>
+        </div>
+        <div class="counter">
+          <span>Kółka:</span>
+          <strong data-role="count-circles">0</strong>
+        </div>
+      </section>
 
-    <div id="board" class="board" aria-label="pole z kształtami"></div>
-
-    <script type="module" src="app.js"></script>
+      <section class="board" aria-label="Lista kształtów" data-role="board">
+        <!-- kształty dodawane dynamicznie -->
+      </section>
+    </main>
   </body>
 </html>

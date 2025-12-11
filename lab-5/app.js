@@ -1,6 +1,4 @@
-import { UI } from './ui.js';
+import { store } from './store.js';
+import { initUI } from './ui.js';
 
-// Inicjalizacja interfejsu po załadowaniu DOM
-document.addEventListener('DOMContentLoaded', () => {
-    UI.init();
-});
+initUI(store);

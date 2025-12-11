@@ -1,8 +1,13 @@
-export function randomHsl() {
-    return `hsl(${Math.floor(Math.random() * 360)}, 70%, 75%)`;
+export function randomColor() {
+    const hue = Math.floor(Math.random() * 360);
+    const saturation = 72;
+    const lightness = 70;
+    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
 
-export function generateId() {
-    // generator unikalnego ID (timestamp + losowa końcówka)
-    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+export function createId(prefix = 'shape') {
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+        return crypto.randomUUID();
+    }
+    return `${prefix}-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 }
